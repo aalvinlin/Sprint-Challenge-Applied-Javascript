@@ -46,6 +46,9 @@ function showOnly(topicToShow)
         }
 
     }
+
+    let articleStatus = document.querySelector(".displayedArticlesStatus");
+    articleStatus.textContent = "Showing only " + topicToShow[0].toUpperCase() + topicToShow.slice(1) + " articles";
 }
 
 function showAll()
@@ -56,4 +59,7 @@ function showAll()
     {
         article.classList.remove("hidden");
     }
+
+    let articleStatus = document.querySelector(".displayedArticlesStatus");
+    articleStatus.textContent = "Showing all articles";
 }

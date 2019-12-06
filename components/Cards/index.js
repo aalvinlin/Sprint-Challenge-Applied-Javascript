@@ -21,6 +21,15 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+// Create a heading to show which articles are being displayed right now
+let cardsContainer = document.querySelector(".cards-container");
+let h2 = document.createElement("h2");
+h2.textContent = "Showing All Articles";
+h2.classList.add("displayedArticlesStatus")
+
+document.body.insertBefore(h2, cardsContainer);
+
+// Get and display each card
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
      .then(response => {
 
