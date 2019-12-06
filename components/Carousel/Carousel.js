@@ -44,32 +44,51 @@ function createCarousel(images) {
 createCarousel(images);
 
 // create left button and right button functionality
+
 let leftButton = document.querySelector(".left-button");
 leftButton.addEventListener("click", () => {
-  imgIndex -= 1;
-
-  if (imgIndex < 0)
-    { imgIndex = images.length - 1; }
-
-  setImage(imgIndex);
+  setImage(getImgIdToTheLeft());
 })
 
 let rightButton = document.querySelector(".right-button");
 rightButton.addEventListener("click", () => {
-  imgIndex += 1;
-
-  if (imgIndex > images.length - 1)
-    { imgIndex = 0; }
-
-    setImage(imgIndex);
+  setImage(getImgIdToTheRight());
 })
 
-function setImage(imgId)
+function getImgIdToTheLeft()
 {
+  let leftIndex = undefined;
+
+  if (imgIndex === 0)
+    { leftIndex = images.length - 1; }
+  else
+    { leftIndex = imgIndex - 1; }
+
+  return leftIndex;
+}
+
+function getImgIdToTheRight()
+{
+  let rightIndex = undefined;
+
+  if (imgIndex === images.length - 1)
+    { rightIndex = 0; }
+  else
+    { rightIndex = imgIndex + 1; }
+
+  return rightIndex;
+}
+
+
+// set the currently displayed image to the image with the specified ID
+function setImage(newId)
+{
+  imgIndex = newId;
+
   let allImages = document.querySelectorAll(".carousel img");
   allImages.forEach(img => {img.classList.remove("displayed");});
 
-  let img = document.getElementById("img" + imgId);
+  let img = document.getElementById("img" + newId);
   img.classList.add("displayed");
 
 }
