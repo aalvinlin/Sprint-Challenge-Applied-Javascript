@@ -21,8 +21,6 @@ function Header() {
     createAndAppend("h1", headerDiv, {textContent: "Lambda Times"});
     createAndAppend("span", headerDiv, {class: "temp", textContent: "98°"});
 
-    console.log(headerDiv);
-
     return headerDiv;
 }
 

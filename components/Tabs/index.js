@@ -14,8 +14,46 @@ axios.get("https://lambda-times-backend.herokuapp.com/topics")
         let parent = document.querySelector(".topics");
 
         for (topic of response.data.topics)
-             { createAndAppend("div", parent, {class: "tab", textContent: topic}); }
+             {
+                let topicClass = topic;
+                if (topic === "node.js")
+                    { topicClass = "node"; }
+
+                let tab = createAndAppend("div", parent, {class: "tab", textContent: topic, onclick: "showOnly('" + topicClass + "')"});
+             }
+        
+        createAndAppend("div", parent, {class: "tab", textContent: "Show All", onclick: "showAll()"});
+             
      })
      .catch(error => {
          console.log("error getting topics:", error);
      })
+
+
+function showOnly(topicToShow)
+{
+    let allArticles = document.querySelectorAll(".card");
+
+    for (article of allArticles)
+    {
+        // hide all articles first
+        article.classList.add("hidden");
+
+        // show only the desired articles
+        if (article.classList.contains(topicToShow))
+        {
+            article.classList.toggle("hidden");
+        }
+
+    }
+}
+
+function showAll()
+{
+    let allArticles = document.querySelectorAll(".card");
+
+    for (article of allArticles)
+    {
+        article.classList.remove("hidden");
+    }
+}

@@ -29,18 +29,23 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+    
     The DOM is an object representation of an HTML page. Nodes are HTML elements or, at the lowest level, the contents of those containers. The DOM is represented as a hierarchy that mirrors the nesting of elements in HMTL.
 
 2. What is an event?
+    
     An event is any type of user interation on a web page. An event could be triggered by moving the mouse, clicking the mouse button, pressing a key on a keyboard, or any other way a user can do something with an input device. 
 
 3. What is an event listener?
+    
     An event listener is an object that keeps track of what events have occured so that a reaction can be run in response. Event listeners monitor a specified type of event and have callback functions that are run if the event is triggered.
 
 4. Why would we convert a NodeList into an Array?
+    
     NodeLists are similar to arrays many ways, but arrays have numerous features that Nodelists lack. For example, it is not possible to use .map() or .reduce() on a Nodelist. As a result, it is often useful to convert NodeLists to arrays in order to use more advanced features when manipulating data.
 
 5. What is a component?
+    
     A component is a modular, reusable piece of code. Examples of components include user cards, search result entries, and tweets. Components are useful because the same structure is used each time, allowing for easy access to functionality both within the component and outside. For example, modifying events or styling the items inside of a component can be done once or on-the-fly, and the positioning and display of the components within their parent containers can also be carried out easily without individually maniuplating each component.
 
 ### Git Set up
