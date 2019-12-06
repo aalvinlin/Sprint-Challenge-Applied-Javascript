@@ -306,3 +306,6 @@ body {
   width: 100%;
   display: none;
 }
+.carousel .displayed {
+  display: block;
+}
